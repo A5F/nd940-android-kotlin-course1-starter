@@ -1,6 +1,5 @@
 package com.udacity.shoestore.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,10 +9,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.MainActivity
-import com.udacity.shoestore.MainViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentListingBinding
 import com.udacity.shoestore.databinding.ItemShoeBinding
@@ -33,19 +30,21 @@ class ListingFragment : Fragment() {
         val viewModel = (activity as MainActivity).getMainViewModel()
 
         viewModel.shoeEventLiveData.observe(requireActivity(), Observer { shoeList ->
-            val inflater = requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            binding.llList.removeAllViews()
+            if (isAdded) {
+                binding.llList.removeAllViews()
 
-            shoeList?.forEach{item ->
-                val bindingItem : ItemShoeBinding = DataBindingUtil.inflate(inflater, R.layout.item_shoe, binding.llList, false )
-                bindingItem.model = item
-                bindingItem.root.setOnClickListener {
-                    Log.d("home", "click-> ${item.name}")
-                    viewModel.modifyShoeEnabled = true
-                    val direction = ListingFragmentDirections.actionListToDetail(item)
-                    findNavController().navigate(direction)
+                shoeList?.forEach { item ->
+                    val bindingItem: ItemShoeBinding =
+                        DataBindingUtil.inflate(inflater, R.layout.item_shoe, binding.llList, false)
+                    bindingItem.model = item
+                    bindingItem.root.setOnClickListener {
+                        Log.d("home", "click-> ${item.name}")
+                        viewModel.modifyShoeEnabled = true
+                        val direction = ListingFragmentDirections.actionListToDetail(item)
+                        findNavController().navigate(direction)
+                    }
+                    binding.llList.addView(bindingItem.root)
                 }
-                binding.llList.addView(bindingItem.root)
             }
         })
 
@@ -59,11 +58,12 @@ class ListingFragment : Fragment() {
             override fun handleOnBackPressed() {
                 // Handle the back button event
                 Log.d("home", "click-> back")
-
+                activity?.finish()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
-
+        (requireActivity() as MainActivity).hideNavigationArrow()
+        setHasOptionsMenu(true)
     }
 
 

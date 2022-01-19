@@ -13,6 +13,7 @@ import com.udacity.shoestore.MainViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentDetailBinding
 import com.udacity.shoestore.models.Shoe
+import java.lang.Exception
 
 class DetailFragment : Fragment() {
 
@@ -35,9 +36,14 @@ class DetailFragment : Fragment() {
         val viewModel = (activity as MainActivity).getMainViewModel()
 
         binding.btnSave.setOnClickListener {
+            var size = 0.0
+            try {
+                size = binding.etSize.text.toString().toDouble()
+            }catch (e:Exception){
+            }
             viewModel.saveNewItem(
                 Shoe(name = binding.etName.text.toString(),
-                    size = binding.etSize.text.toString().toDouble(),
+                    size = size,
                     company = binding.etCompany.text.toString(),
                     description = binding.etDescription.text.toString(),
                     images = arrayListOf("", "")

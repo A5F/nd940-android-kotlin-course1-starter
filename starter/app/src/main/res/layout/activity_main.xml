@@ -14,6 +14,7 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_height="wrap_content"
+            android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -28,9 +29,15 @@
 
         <fragment
             android:id="@+id/nav_host_fragment"
+            app:layout_constraintTop_toBottomOf="@id/appbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
+            android:layout_marginTop="56dp"
             app:defaultNavHost="true"
             app:navGraph="@navigation/shoe_graph" />
 

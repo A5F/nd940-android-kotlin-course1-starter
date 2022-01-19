@@ -18,8 +18,33 @@
 
 
     <style name="TxtStyle">
-        <item name="android:textSize">16sp</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 
+    <style name="TxtStyle.Title">
+        <item name="android:textSize">25sp</item>
+    </style>
+    <style name="TxtStyle.Subtitle">
+        <item name="android:textSize">15sp</item>
+
+    </style>
+
+    <style name="BtnStyle">
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">22dp</item>
+    </style>
+
+
+    <style name="TextInputLayoutStyle" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_marginStart">@dimen/margin_big</item>
+        <item name="android:layout_marginEnd">@dimen/margin_big</item>
+        <item name="android:layout_marginTop">100dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
 
     </style>
 

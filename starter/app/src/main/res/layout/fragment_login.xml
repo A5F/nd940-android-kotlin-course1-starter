@@ -75,7 +75,6 @@
                 android:layout_height="50dp"
                 android:inputType="textNoSuggestions|textVisiblePassword"
                 android:imeOptions="actionDone"
-
                 android:singleLine="true"
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -83,8 +82,7 @@
         <Button
             android:id="@+id/btn_login_new"
             android:text="Nuovo Utente"
-            android:layout_margin="20dp"
-            android:layout_width="wrap_content"
+            style="@style/BtnStyle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ti_password"
             android:layout_height="wrap_content"/>
@@ -92,11 +90,9 @@
         <Button
             android:id="@+id/btn_login_old"
             android:text="Utente esistente"
-            android:layout_width="wrap_content"
-            android:layout_margin="20dp"
+            style="@style/BtnStyle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_login_new"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintTop_toBottomOf="@id/btn_login_new" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

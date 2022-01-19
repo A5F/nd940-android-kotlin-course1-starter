@@ -3,10 +3,116 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <variable
+            name="model"
+            type="com.udacity.shoestore.models.Shoe" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_name"
+            app:endIconMode="clear_text"
+            app:errorEnabled="false"
+            app:boxStrokeColor="@color/colorPrimary"
+            tools:hintTextColor="@color/primary_darkgray_50"
+            style="@style/TextInputLayoutStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:imeOptions="actionNext"
+                android:text="@{model.name}"
+                android:nextFocusForward="@id/ti_password"
+                android:singleLine="true"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_company"
+
+            app:endIconMode="clear_text"
+            app:errorEnabled="false"
+            app:boxStrokeColor="@color/colorPrimary"
+            tools:hintTextColor="@color/primary_darkgray_50"
+            style="@style/TextInputLayoutStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ti_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_company"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:imeOptions="actionNext"
+                android:text="@{model.company}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_size"
+
+            app:endIconMode="clear_text"
+            app:errorEnabled="false"
+            app:boxStrokeColor="@color/colorPrimary"
+            tools:hintTextColor="@color/primary_darkgray_50"
+            style="@style/TextInputLayoutStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ti_company"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_size"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:imeOptions="actionNext"
+                android:text="@{model.displaySize}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_description"
+
+            app:endIconMode="clear_text"
+            app:errorEnabled="false"
+            app:boxStrokeColor="@color/colorPrimary"
+            tools:hintTextColor="@color/primary_darkgray_50"
+            style="@style/TextInputLayoutStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ti_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_description"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@{model.description}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:text="ANNULLA"
+            style="@style/BtnStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ti_description"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:text="SALVA"
+            style="@style/BtnStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ti_description"
+            android:layout_height="wrap_content"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

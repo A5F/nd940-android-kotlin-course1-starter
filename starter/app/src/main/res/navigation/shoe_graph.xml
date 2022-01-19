@@ -5,7 +5,7 @@
     app:startDestination="@id/login_destination">
     <fragment
         android:id="@+id/login_destination"
-        android:name="com.udacity.shoestore.ui.login.LoginFragment"
+        android:name="com.udacity.shoestore.ui.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/welcome_destination"
         android:name="com.udacity.shoestore.ui.WelcomeFragment"
-        android:label="welcome_fragment"
+        android:label="Welcome"
         tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_welcome_to_instruction"
@@ -31,20 +31,21 @@
     <fragment
         android:id="@+id/instruction_destination"
         android:name="com.udacity.shoestore.ui.InstructionsFragment"
-        android:label="instruction_fragment"
+        android:label="Instruction"
         tools:layout="@layout/fragment_instruction">
         <action
             android:id="@+id/action_instruction_to_list"
             app:destination="@id/list_destination"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/list_destination"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/list_destination"
         android:name="com.udacity.shoestore.ui.ListingFragment"
-        android:label="list_fragment"
+        android:label="HOME"
         tools:layout="@layout/fragment_listing">
         <action
             android:id="@+id/action_list_to_detail"
@@ -53,7 +54,12 @@
             app:exitAnim="@anim/slide_out_left"
             app:launchSingleTop="true"
             app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left" />
+            app:popExitAnim="@anim/slide_out_left" >
+            <argument
+                android:name="shoe"
+                app:argType="com.udacity.shoestore.models.Shoe"
+                app:nullable="true"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/detail_destination"

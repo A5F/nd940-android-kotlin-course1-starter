@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+
+
+    <string name="login_mail">Inserisci il tuo username</string>
+    <string name="login_password">Inserisci la tua password</string>
+    <string name="welcome_title">Benvenuto,\npotrai vedere un vasto assortimenti di scarpe solo per te </string>
+    <string name="welcome_subtitle">Cerca i tuoi modelli preferiti, tieni sotto controllo i prezzi e quando saranno disponibili per venire subito a casa tua</string>
+
+    <string name="instruction_title">Aggiungi le tue scarpe, visualizza i dettagli </string>
+    <string name="instruction_subtitle">Visualizza la compagna la descrizione e tutte le informazioni associati alle scarpe che vuoi avere a portata di click</string>
+
+
 </resources>

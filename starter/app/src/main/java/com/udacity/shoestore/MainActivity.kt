@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //having multiple item in xml, i preferred use Constraint layout to avoid multiple annidation in linearlayout
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         activityMainBinding.toolbar.title = getString(R.string.app_name)
         Timber.plant(Timber.DebugTree())

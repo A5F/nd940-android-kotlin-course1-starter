@@ -14,6 +14,8 @@ class InstructionsFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
+
+        //very simple layout xml, i used Linear Layout for better perfomance
         val binding: FragmentInstructionBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_instruction, container, false)
 

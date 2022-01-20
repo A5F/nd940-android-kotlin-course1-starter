@@ -19,6 +19,10 @@ class ListingFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
+
+        //have multiple plan in layout, Linear Layout is not good,
+        // i can use ConstraintLayout or better Relative Layout because is anyway a simple layout,
+        // the request was a choice between linearLayout and ConstraintLayoutt I therefore chose ConstraintLayout
         val binding: FragmentListingBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_listing, container, false)
 

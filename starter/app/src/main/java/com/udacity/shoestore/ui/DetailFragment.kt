@@ -26,6 +26,7 @@ class DetailFragment : Fragment() {
             shoeItem = requireArguments().get("shoe") as Shoe?
         }
 
+        //having multiple item in xml, i preferred use Constraint layout to avoid multiple annidation in linearlayout
         val binding: FragmentDetailBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_detail, container, false)
 

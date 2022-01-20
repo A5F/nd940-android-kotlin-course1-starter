@@ -17,6 +17,10 @@ class LoginFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
+        //very simple layout xml,
+        // all vertical and withoun annidation
+        // i used Linear Layout for better perfomance
+
         val binding: FragmentLoginBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_login, container, false)
 
